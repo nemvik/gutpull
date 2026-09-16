@@ -9,12 +9,7 @@ Install this, and typing `gut` instead of `git` gets you an anguished
 "Ouch!" through your speakers before it quietly runs the real `git` command
 anyway, because we're mean, not cruel.
 
-```
-$ gut status
-🔊 "Ouch!"
-On branch main
-nothing to commit, working tree clean
-```
+![demo](demo.gif)
 
 ## Install
 
@@ -58,3 +53,13 @@ if you want the full experience.
 `sounds/ouch.wav` is a free sound effect, hand-picked for maximum comedic
 pain. Feel free to swap it for your own favorite flavor of "ouch" — any
 short `.wav` dropped in at that path works, no code changes needed.
+
+## Regenerating the demo GIF
+
+The GIF at the top was recorded with [asciinema](https://asciinema.org) and
+converted with [agg](https://github.com/asciinema/agg):
+
+```
+asciinema rec -c "bash scripts/demo-record.sh" demo.cast
+agg --theme dracula --font-size 18 demo.cast demo.gif
+```
